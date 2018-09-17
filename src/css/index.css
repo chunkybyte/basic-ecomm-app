@@ -9,10 +9,17 @@ body {
     background-color: #E4E4E4;
     border: 1px solid #CCC;
     border-radius: 3px;
+    align-items: center;
 }
 
 .inpField {
     border: 1px solid #CCC;
     border-radius: 3px;
     margin: 0px 30px;
+}
+
+.grandTotal {
+    text-align: right;
+    font-size: 20px;
+    font-weight: 900;
 }
