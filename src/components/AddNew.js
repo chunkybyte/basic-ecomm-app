@@ -31,10 +31,21 @@ class AddNew extends React.Component {
     }
 
     submitItemToStore = () => {
+        const name = this.nameRef.current.value; 
+        const quantity = parseFloat(this.quantityRef.current.value); 
+        const price = parseFloat(this.priceRef.current.value); 
+
+        if (name === '' || quantity === '' || price === '') {
+            this.setState({
+                showForm: !this.state.showForm
+            });
+            return;
+        }
+
         const newItem = {
-            "name": this.nameRef.current.value,
-            "quantity": parseFloat(this.quantityRef.current.value),
-            "price": parseFloat(this.priceRef.current.value),
+            name,
+            quantity,
+            price
         }
 
         this.props.sumbitItem(newItem);
@@ -57,15 +68,15 @@ class AddNew extends React.Component {
                         <form>
                             <label>
                                 Name:
-                                <input type="text" name="name" className="inpField" ref={this.nameRef} />
+                                <input type="text" name="name" className="inpField" ref={this.nameRef} required />
                             </label>
                             <label>
                                 Quantity:
-                                <input type="number" name="quantity" className="inpField" ref={this.quantityRef} />
+                                <input type="number" name="quantity" className="inpField" ref={this.quantityRef} required />
                             </label>
                             <label>
                                 Price:
-                                <input type="text" name="price" className="inpField" ref={this.priceRef} />
+                                <input type="text" name="price" className="inpField" ref={this.priceRef} required />
                             </label>
                         </form>
                     </ModalBody>

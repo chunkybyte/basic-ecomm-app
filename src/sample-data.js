@@ -1,4 +1,4 @@
-const data = {
+const sample = {
     "data": [
         {
             "id": 'P001',
@@ -21,4 +21,4 @@ const data = {
     ]
 }
 
-export default data;
+export default sample;

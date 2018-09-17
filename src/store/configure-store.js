@@ -1,10 +1,10 @@
 import { createStore } from 'redux';
 import rootReducer from '../reducers/index';
 
-import data from '../sample-data';
+import sample from '../sample-data';
 
 const initialState = {
-    data: data.data
+    data: sample.data
 };
 
 const store = createStore(rootReducer, initialState);
